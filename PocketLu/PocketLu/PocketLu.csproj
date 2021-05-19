@@ -57,6 +57,12 @@
     <Compile Include="FormAdmin\Creditos.Designer.cs">
       <DependentUpon>Creditos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormAdmin\DespliegueVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin\DespliegueVenta.Designer.cs">
+      <DependentUpon>DespliegueVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormAdmin\Gastos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,12 @@
     <Compile Include="FormAdmin\Ventas.Designer.cs">
       <DependentUpon>Ventas.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormEmpleado\ProductosEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEmpleado\ProductosEmpleado.Designer.cs">
+      <DependentUpon>ProductosEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +118,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin\Creditos.resx">
       <DependentUpon>Creditos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin\DespliegueVenta.resx">
+      <DependentUpon>DespliegueVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin\Gastos.resx">
       <DependentUpon>Gastos.cs</DependentUpon>
@@ -124,6 +139,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin\Ventas.resx">
       <DependentUpon>Ventas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEmpleado\ProductosEmpleado.resx">
+      <DependentUpon>ProductosEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -201,6 +219,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-compras %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-compras menos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-compras verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título-1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tarjeta-de-credito %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lupa.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

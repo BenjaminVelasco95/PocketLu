@@ -40,12 +40,12 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pBarraTitulo = new System.Windows.Forms.Panel();
             this.iconMinimizar = new System.Windows.Forms.PictureBox();
+            this.lblReloj = new System.Windows.Forms.Label();
             this.iconRestaurar = new System.Windows.Forms.PictureBox();
             this.iconMaxi = new System.Windows.Forms.PictureBox();
             this.iconCerrar = new System.Windows.Forms.PictureBox();
             this.btnSlideMenu = new System.Windows.Forms.PictureBox();
             this.pChild = new System.Windows.Forms.Panel();
-            this.lblReloj = new System.Windows.Forms.Label();
             this.pMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pBarraTitulo.SuspendLayout();
@@ -108,7 +108,7 @@
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(250, 40);
             this.btnReportes.TabIndex = 2;
-            this.btnReportes.Text = "Reportes";
+            this.btnReportes.Text = "REPORTES";
             this.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnReportes.UseVisualStyleBackColor = true;
             // 
@@ -126,7 +126,7 @@
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(250, 40);
             this.btnUsuarios.TabIndex = 2;
-            this.btnUsuarios.Text = "Usuarios";
+            this.btnUsuarios.Text = "USUARIOS";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnUsuarios.UseVisualStyleBackColor = true;
             // 
@@ -144,7 +144,7 @@
             this.btnClientes.Name = "btnClientes";
             this.btnClientes.Size = new System.Drawing.Size(250, 40);
             this.btnClientes.TabIndex = 2;
-            this.btnClientes.Text = "Clientes";
+            this.btnClientes.Text = "CLIENTES";
             this.btnClientes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnClientes.UseVisualStyleBackColor = true;
             // 
@@ -183,6 +183,7 @@
             this.btnGastos.Text = "GASTOS";
             this.btnGastos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGastos.UseVisualStyleBackColor = true;
+            this.btnGastos.Click += new System.EventHandler(this.btnGastos_Click);
             // 
             // btnProductos
             // 
@@ -261,6 +262,18 @@
             this.iconMinimizar.TabStop = false;
             this.iconMinimizar.Click += new System.EventHandler(this.iconMinimizar_Click);
             // 
+            // lblReloj
+            // 
+            this.lblReloj.AutoSize = true;
+            this.lblReloj.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblReloj.ForeColor = System.Drawing.Color.Black;
+            this.lblReloj.Location = new System.Drawing.Point(148, 12);
+            this.lblReloj.Name = "lblReloj";
+            this.lblReloj.Size = new System.Drawing.Size(46, 21);
+            this.lblReloj.TabIndex = 0;
+            this.lblReloj.Text = "Reloj";
+            this.lblReloj.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
+            // 
             // iconRestaurar
             // 
             this.iconRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -321,18 +334,6 @@
             this.pChild.Name = "pChild";
             this.pChild.Size = new System.Drawing.Size(1050, 600);
             this.pChild.TabIndex = 2;
-            // 
-            // lblReloj
-            // 
-            this.lblReloj.AutoSize = true;
-            this.lblReloj.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.lblReloj.ForeColor = System.Drawing.Color.Black;
-            this.lblReloj.Location = new System.Drawing.Point(148, 12);
-            this.lblReloj.Name = "lblReloj";
-            this.lblReloj.Size = new System.Drawing.Size(46, 21);
-            this.lblReloj.TabIndex = 0;
-            this.lblReloj.Text = "Reloj";
-            this.lblReloj.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pBarraTitulo_MouseDown);
             // 
             // IndexAdmin
             // 

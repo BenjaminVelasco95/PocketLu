@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using PocketLu.FormAdmin;
+using PocketLu.FormEmpleado;
 
 namespace PocketLu
 {
@@ -119,8 +120,23 @@ namespace PocketLu
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-            openChildForm(new ProductosAdmin());
-            RetraerSubmenu();
+            if (rol == "Empleado")
+            {
+                openChildForm(new ProductosEmpleado());
+                RetraerSubmenu();
+            }
+            else
+            {
+                openChildForm(new ProductosAdmin());
+                RetraerSubmenu();
+
+            }
+            
+        }
+
+        private void btnGastos_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Gastos());
         }
 
         

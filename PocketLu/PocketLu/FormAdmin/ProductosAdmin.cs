@@ -18,7 +18,8 @@ namespace PocketLu.FormAdmin
         {
             InitializeComponent();
         }
-        static string conn = "SERVER = 127.0.0.1; PORT=3306;DATABASE=pocketlu;UID=root;PWD=;"; 
+        string idProducto="";
+        static string conn = "SERVER = 127.0.0.1; PORT=3306;DATABASE=pocketlu;UID=root;PWD=;";
         MySqlConnection cn = new MySqlConnection(conn);
         MySqlCommand cmd = new MySqlCommand();
         MySqlConnection conectanos = new MySqlConnection();
@@ -43,6 +44,12 @@ namespace PocketLu.FormAdmin
                 return null;
             }
         }
+
+        private void LimpForm()
+        {
+            txtNombre.Text = "";
+            txtPrecio.Text = "";
+        }
         /*cargar el form*/
         private void ProductosAdmin_Load(object sender, EventArgs e)
         {
@@ -63,8 +70,77 @@ namespace PocketLu.FormAdmin
 
         private void dtgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            idProducto = dtgProductos.CurrentRow.Cells[0].Value.ToString();
             txtNombre.Text = dtgProductos.CurrentRow.Cells[1].Value.ToString();
             txtPrecio.Text = dtgProductos.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.CommandText = ("INSERT INTO `productos`(`nombre`, `precio`) VALUES ('" + txtNombre.Text + "','" + txtPrecio.Text + "');");
+                MySqlDataReader dr = cmd.ExecuteReader();
+                MessageBox.Show("Se ah agregado el prodcuto con éxito");
+                cn.Close();
+                dtgProductos.DataSource = llenar_Grid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ah Ocurrido un Error: " + ex.ToString());
+            }
+            ///
+            LimpForm();
+            ///
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.CommandText = ("UPDATE `productos` SET `nombre`='" + txtNombre.Text + "',`precio`='" + txtPrecio.Text + "' WHERE `idProducto`='" + idProducto + "';");
+                MySqlDataReader dr = cmd.ExecuteReader();
+                MessageBox.Show("Se ah modificado el producto con éxito");
+                cn.Close();
+                dtgProductos.DataSource = llenar_Grid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ah Ocurrido un Error: " + ex.ToString());
+            }
+            ///
+            LimpForm();
+            ///
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cn.Open();
+                cmd.Connection = cn;
+                cmd.CommandText = ("DELETE FROM productos WHERE idProducto = '" + idProducto + "';");
+                MySqlDataReader dr = cmd.ExecuteReader();
+                MessageBox.Show("Se ha eliminado el producto");
+                cn.Close();
+                dtgProductos.DataSource = llenar_Grid();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ah Ocurrido un Error: " + ex.ToString());
+            }
+            ///
+            LimpForm();
+            ///
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            LimpForm();
         }
     }
 }
