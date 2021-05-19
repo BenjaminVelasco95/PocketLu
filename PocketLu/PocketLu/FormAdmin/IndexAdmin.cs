@@ -149,6 +149,11 @@ namespace PocketLu
             openChildForm(new Usuarios());
         }
 
+        private void btnCredito_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Creditos());
+        }
+
         
     }
 }

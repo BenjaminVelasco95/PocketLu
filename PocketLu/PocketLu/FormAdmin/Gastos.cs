@@ -16,8 +16,12 @@ namespace PocketLu.FormAdmin
     {
         public Gastos()
         {
+            ti = new Timer();
             InitializeComponent();
+            ti.Enabled = true;
         }
+        string curdate;
+        Timer ti;
         string idGasto="";
         static string conn = "SERVER = 127.0.0.1; PORT=3306;DATABASE=pocketlu;UID=root;PWD=;";
         MySqlConnection cn = new MySqlConnection(conn);
@@ -52,6 +56,8 @@ namespace PocketLu.FormAdmin
         }
         private void Gastos_Load(object sender, EventArgs e)
         {
+            DateTime hoy = DateTime.Now;
+            curdate = hoy.ToString("yy/MM/dd");
             dtgGastos.DataSource = llenar_Grid();
         }
 
@@ -68,7 +74,7 @@ namespace PocketLu.FormAdmin
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("INSERT INTO `gastos`(`Descripcion`, `Monto`) VALUES ('"+txtDescrip.Text+"','"+txtMonto.Text+"');");
+                cmd.CommandText = ("INSERT INTO `gastos`(`Descripcion`, fecha, `Monto`) VALUES ('"+txtDescrip.Text+"','"+curdate+"','"+txtMonto.Text+"');");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Gasto Registrado con exito");
                 cn.Close();

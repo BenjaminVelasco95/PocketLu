@@ -83,6 +83,8 @@ namespace PocketLu.FormAdmin
             idVenta = dtgVentas.CurrentRow.Cells[0].Value.ToString();
             ob.idVenta = dtgVentas.CurrentRow.Cells[0].Value.ToString();
             dtgDVentas.DataSource = GridDespliegue(idVenta);
+            if (pCobro.Visible == true)
+                pCobro.Visible = false;
         }
 
         private void btnNVenta_Click(object sender, EventArgs e)
@@ -91,7 +93,7 @@ namespace PocketLu.FormAdmin
             {
                 cn.Open();
                 cmd.Connection = cn;
-                cmd.CommandText = ("INSERT INTO `ventas`(`fecha`) VALUES ('" + curdate + "');");
+                cmd.CommandText = ("INSERT INTO `ventas`(`fecha`, `credito`) VALUES ('" + curdate + "', 'no');");
                 MySqlDataReader dr = cmd.ExecuteReader();
                 MessageBox.Show("Se ah creado la venta");
                 cn.Close();

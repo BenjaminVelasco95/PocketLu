@@ -167,6 +167,7 @@
             this.btnCredito.Text = "CREDITO";
             this.btnCredito.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCredito.UseVisualStyleBackColor = true;
+            this.btnCredito.Click += new System.EventHandler(this.btnCredito_Click);
             // 
             // btnGastos
             // 
