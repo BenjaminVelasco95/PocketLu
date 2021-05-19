@@ -139,6 +139,16 @@ namespace PocketLu
             openChildForm(new Gastos());
         }
 
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Clientes());
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Usuarios());
+        }
+
         
     }
 }
